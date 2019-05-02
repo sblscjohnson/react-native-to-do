@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native'
 
 const styles = StyleSheet.create({
   todoContainer: {
-    paddingTop: 10,
     height: '90%',
     margin: 'auto'
   },
@@ -23,6 +22,10 @@ const styles = StyleSheet.create({
    alignItems: 'center',
    marginTop: 10,
    marginBottom: 10
+  },
+  list: {
+    marginTop: 25,
+    marginBottom: 25
   }
 })
 
@@ -57,7 +60,7 @@ class Todo extends React.Component {
 
     return (
       <View style={ styles.todoContainer }>
-        { mappedList }
+        <View style={styles.list}>{ mappedList }</View>
         <TextInput style={ styles.input } onChangeText={ val => this.setState({ text: val }) } placeholder='new to-do' value={text} />
         <Button title='add to-do' onPress={ () => this.setState({ todoList: [...todoList, text], text: '' }) } />
       </View>
