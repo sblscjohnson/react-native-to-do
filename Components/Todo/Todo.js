@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native'
 
 const styles = StyleSheet.create({
   todoContainer: {
+    paddingTop: 10,
     height: '90%',
     margin: 'auto'
   },
@@ -13,9 +14,13 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 2
   },
+  text: {
+    margin: 5
+  },
   singleTodo: {
    display: 'flex',
    flexDirection: 'row',
+   alignItems: 'center',
    marginTop: 10,
    marginBottom: 10
   }
@@ -44,7 +49,7 @@ class Todo extends React.Component {
       return (
         <View style={styles.singleTodo} key={ index }>
           <Button title='X' onPress={ () => this.deleteItem(index) } />
-          <Text>{ listItem }</Text>
+          <Text style={styles.text} >{ listItem }</Text>
         </View>
       )
     })
