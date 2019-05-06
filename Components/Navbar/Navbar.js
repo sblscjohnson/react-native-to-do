@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import { Link, withRouter } from 'react-router-native'
 
 const styles = StyleSheet.create({
   navContainer: {
@@ -7,7 +8,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    backgroundColor: 'black'
+    height: 25,
+    backgroundColor: 'green'
   },
   navTitle: {
     color: 'white',
@@ -21,6 +23,8 @@ const Navbar = (props) => {
   return (
     <View style={styles.navContainer}>
       <Text style={styles.navTitle}>To-Do List</Text>
+      <Link to={`/`}><Text>Home</Text></Link>
+      <Link to={`/Todo`}><Text>To Do</Text></Link>
     </View>
   )
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NativeRouter as Router } from 'react-router-native'
 
 import Navbar from './Components/Navbar/Navbar'
-import Todo from './Components/Todo/Todo'
+import routes from './routes'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    // alignItems: 'center'
   },
 });
 
@@ -16,8 +17,10 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Navbar/>
-        <Todo />
+        <Router>
+        <Navbar />
+          {routes}
+        </Router>
       </View>
     );
   }
