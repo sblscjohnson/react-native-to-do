@@ -2,14 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NativeRouter as Router } from 'react-router-native'
 
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './screens/Navbar/Navbar'
 import routes from './routes'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center'
+    alignItems: 'center'
   },
+  content: {
+    height: '85%'
+  }
 });
 
 class App extends React.Component {
@@ -19,7 +22,7 @@ class App extends React.Component {
       <View style={styles.container}>
         <Router>
         <Navbar />
-          {routes}
+          <View style={styles.content}>{routes}</View>
         </Router>
       </View>
     );

@@ -9,12 +9,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: 25,
-    backgroundColor: 'green'
+    backgroundColor: 'black'
   },
-  navTitle: {
+
+  navLinks: {
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  singleLink: {
     color: 'white',
-    marginTop: 'auto',
-    fontSize: 40
   }
 })
 
@@ -22,9 +25,10 @@ const Navbar = (props) => {
 
   return (
     <View style={styles.navContainer}>
-      <Text style={styles.navTitle}>To-Do List</Text>
-      <Link to={`/`}><Text>Home</Text></Link>
-      <Link to={`/Todo`}><Text>To Do</Text></Link>
+      <View style={styles.navLinks}>
+        <Link style={styles.singleLink} to={`/`}><Text style={styles.singleLink}>Home</Text></Link>
+        <Link to={`/Todo`}><Text style={styles.singleLink}>Your List</Text></Link>
+      </View>
     </View>
   )
 }
